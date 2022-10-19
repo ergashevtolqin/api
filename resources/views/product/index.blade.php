@@ -40,6 +40,7 @@
     </section>
         <button type="submit" class="footer" style="border-radius:1px">Saqlash</button>
     </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://tg.dev/js/jquery.min.js"></script>
     <script>
         function clicked(id)

@@ -23,6 +23,9 @@
         <h1 style="margin-left:20px ;">Jami:</h1> <h2 style="margin-left:20px;margin-left: auto;">{{$all_sum}} so'm</h2>
     </div>
     <hr>
+    <div class="row">
+        <a href="{{route('product',['id'=>$product->items[0]->user[0]->id])}}" class="btn btn-danger w-100">Orqaga</a>
+    </div>
 
     <script src="https://tg.dev/js/jquery.min.js"></script>
     <script>
