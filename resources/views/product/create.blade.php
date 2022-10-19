@@ -16,7 +16,7 @@
         @foreach($product->items as $key=>$item)
 
             <div class="row" style="display: flex;padding-right:25px;">
-                <h5 style="margin-left:20px ;">{{$item->medicine->name}}:</h5> <h5 style="margin-left:20px;margin-left: auto;">{{$item->medicine->price}}X{{$item->number}}</h5>
+                <h5 style="margin-left:20px ;">{{$item->medicine->name}}:</h5> <h5 style="margin-left:20px;margin-left: auto;">{{$item->number}}&nbspx {{$item->medicine->price}}</h5>
             </div>
             {{--    {% endfor %}--}}
         @endforeach
@@ -25,7 +25,7 @@
         </div>
         <hr>
         <div class="row " style="position: absolute;bottom: 5px; width: 100%">
-            <a href="{{route('product',['id'=>$product->items[0]->user[0]->id])}}" class="btn btn-danger w-100">Orqaga</a>
+            <a href="{{route('product',['id'=>$product->items[0]->user[0]->id])}}" class="btn btn-success w-100">Zakaz ochish</a>
         </div>
 
     </div>
