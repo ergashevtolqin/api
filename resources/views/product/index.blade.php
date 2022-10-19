@@ -2,7 +2,7 @@
 @section('content')
     <form method="post" action="{{route('product.create',['id'=>$id])}}">
         @csrf
-    <section class="cafe-page cafe-items" style="margin-bottom:60px">
+    <section class="cafe-page cafe-items" style="margin-bottom:100px">
         @foreach($products as $product)
         <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
             <div id="counter{{$product->id}}" style="display: none;" class="cafe-item-counter js-item-counter">1</div>
@@ -38,7 +38,7 @@
         @endforeach
 
     </section>
-        <button type="submit" class="footer" style="border-radius:1px">Saqlash</button>
+        <button type="submit" class="footer" style="border-radius:1px; z-index: 1000;">Saqlash</button>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://tg.dev/js/jquery.min.js"></script>
