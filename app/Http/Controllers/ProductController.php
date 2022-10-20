@@ -14,9 +14,11 @@ class ProductController extends Controller
         $response1=Http::get('http://128.199.2.165:8100/api/v1/user/info/'.$id.'/');
         $r1=json_decode($response1);
         if ($r1->status==3){
-
+            $response = Http::get('http://128.199.2.165:8100/api/v1/product/list/');
+        }else{
+            $message=$r1->message;
+            return view('product.failed', compact('message'));
         }
-        $response = Http::get('http://128.199.2.165:8100/api/v1/product/list/');
         $products=json_decode($response);
         return view('product.index', compact('id','products'));
     }
