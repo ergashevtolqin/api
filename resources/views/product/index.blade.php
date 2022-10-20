@@ -3,7 +3,7 @@
     <form method="post" action="{{route('product.create',['id'=>$id])}}">
         @csrf
     <section class="cafe-page cafe-items" style="margin-bottom:100px">
-        @foreach($products as $product)
+        @foreach($products->items as $product)
         <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
             <div id="counter{{$product->id}}" style="display: none;" class="cafe-item-counter js-item-counter">1</div>
             <div class="cafe-item-photo">
