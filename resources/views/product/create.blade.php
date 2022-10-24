@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container" style="color: #222222!important">
         <h1 style="text-align: center;">Elektron Chek</h1>
         <hr style="width: 100%;">
         <div class="row" style="display: flex;padding-right:25px;">

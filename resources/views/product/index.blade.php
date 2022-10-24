@@ -4,13 +4,30 @@
         @csrf
     <section class="cafe-page cafe-items" style="margin-bottom:100px">
         @foreach($products->items as $product)
-        <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
+
+                <div class="cafe-item js-item" data-item-id="1" data-item-price="4990"
+                    @if ($product->category_id == 2)
+                        style="background-color: #3d708a;margin-bottom: 10px;"
+                    @elseif ($product->category_id == 3)
+                         style="background-color:#a79b22;margin-bottom: 10px;"
+                    @elseif ($product->category_id == 4)
+                         style="background-color:#8822a7;margin-bottom: 10px;"
+                    @elseif ($product->category_id == 5)
+                         style="background-color:#a93215;margin-bottom: 10px;"
+                    @endif
+                >
+{{--        <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">--}}
             <div id="counter{{$product->id}}" style="display: none;" class="cafe-item-counter js-item-counter">1</div>
             <div class="cafe-item-photo">
 {{--               --}}
                 <picture class="cafe-item-lottie js-item-lottie">
                     <source type="application/x-tgsticker" srcset="./assets/img/Burger.png" >
-                    <img src="{{asset('./assets/img/Burger_148.png')}}"
+                    <img
+                        @if($product->imge_url != null)
+                            src="{{$product->imge_url}}"
+                        @else
+                            src="{{asset('./assets/img/Burger_148.png')}}"
+                        @endif
                          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iLTMwMCUiIHgyPSItMjAwJSIgeTE9IjAiIHkyPSIwIj48c3RvcCBvZmZzZXQ9Ii0xMCUiIHN0b3Atb3BhY2l0eT0iLjEiLz48c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1vcGFjaXR5PSIuMDciLz48c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1vcGFjaXR5PSIuMDciLz48c3RvcCBvZmZzZXQ9IjExMCUiIHN0b3Atb3BhY2l0eT0iLjEiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ4MSIgZnJvbT0iLTMwMCUiIHRvPSIxMjAwJSIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ4MiIgZnJvbT0iLTIwMCUiIHRvPSIxMzAwJSIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjY4LDQ5OWMtNTEtMi0xMDYtMS0xNTMtMjItMjgtMTItMzktNDAtNDItNjgsMC00LDMtNywxLTEwLTUtNi0xNiwzLTEzLTE0LDItMTEsMTItMTQsMTEtMjcsMC0yLTUtMTItNS0xNiwwLTYsNS0xNyw0LTIyLTItNy05LTUtNi0xNSwzLTEwLDE0LTcsMTktMTMsNy0xMi0xNC0yNC0xNy0zMy0zLTEyLTEtMjgsMi0zOSwyOC0xMDEsMTQ4LTEzMywyMzktMTE1LDY0LDEzLDEzMCw1OSwxNDIsMTI3LDMsMTgsMCwzMi0xNSw0Mi0xLDEtMTEsMTMtNywxNiw0LDIsMjAsNCwyMiw5LDYsMTAtNywxNS05LDIyLTEsMywzLDExLDMsMTYsMCwyLTMsMTctMiwxOSwyLDIsOCwxLDEwLDQsMyw1LDQsMTYsNiwyMiw0LDEzLTE1LDIwLTE5LDI3LTksMjAsNSw0MC0yMyw2MC00MCwyOC0xMDEsMjktMTQ4LDMweiIvPjwvc3ZnPg==');"
                          alt="Burger">
                 </picture>

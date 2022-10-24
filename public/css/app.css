@@ -20,7 +20,7 @@ body {
     --status-height: 48px;
     --accent-color: #31b545;
     --main-color: #f8a917;
-    --text-color: #222;
+    --text-color: #e7e5e5;
     --page-hint-color: #83878a;
     --hint-color: #74787a;
     --placeholder-color: #999da1;
@@ -73,10 +73,10 @@ body.order-mode .cafe-items {
     max-height: 0 !important;
     opacity: 0 !important;
 }
-.cafe-items:after {
-    content: '';
-    flex-grow: 2;
-}
+/*.cafe-items:after {*/
+/*    content: '';*/
+/*    flex-grow: 2;*/
+/*}*/
 .cafe-item,
 .cafe-item-shadow {
     position: relative;
