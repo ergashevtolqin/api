@@ -11,6 +11,9 @@ class ProductController extends Controller
 {
     public function index($id)
     {
+        $response = Http::post('http://128.199.2.165:8100/api/v1/user/tracking/', [
+            'user_id' => $id,
+        ]);
         $response1=Http::get('http://128.199.2.165:8100/api/v1/user/info/'.$id.'/');
         $r1=json_decode($response1);
         if ($r1->status==3){
