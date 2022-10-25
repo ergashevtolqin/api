@@ -30,6 +30,7 @@ class ProductController extends Controller
     {
         $inputs = $request->all();
         unset($inputs['_token']);
+//        dd($inputs);
         $data=[];
         foreach ($inputs as $key => $re)
         {
@@ -38,7 +39,7 @@ class ProductController extends Controller
                 $data[$key] = $re;
             }
         }
-//        return $data;
+        return $data;
         $response = Http::post('http://128.199.2.165:8100/api/v1/product/create/', [
                 'user_id' => $user_id,
                 'data' => $data
@@ -48,6 +49,7 @@ class ProductController extends Controller
         $product=json_decode($response);
 //        dd($product->items[0]->order_id);
         $all_sum=0;
+        dd($product);
         foreach ($product->items as $item){
             $all_sum+=$item->medicine->price*$item->number;
         }
