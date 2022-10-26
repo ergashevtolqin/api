@@ -66,6 +66,11 @@ class ProductController extends Controller
 
     public function smenaCreate($id, Request $request)
     {
+        $request->validate([
+            'pharm_id'=>'required',
+            'smena'=>'required',
+            'image'=>'required'
+        ]);
         $req = $request->all();
         unset($req['_token']);
 //        dd($req);
@@ -83,6 +88,11 @@ class ProductController extends Controller
 
     public function smenaStore($id,Request $request)
     {
+        $request->validate([
+            'pharm_id'=>'required',
+            'smena'=>'required',
+            'image'=>'required'
+        ]);
         $req = $request->all();
         unset($req['_token']);
 //        dd($request->file('image'));

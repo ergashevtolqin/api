@@ -8,14 +8,23 @@
 									align-items: center;
 									justify-content: center;
 									height: 100vh;">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="smena">
-            <option selected disabled hidden>Smenani tanglang</option>
+        <select required class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="smena">
+            <option selected disabled hidden>Smenani tanlang</option>
             <option value="1">Smena Ochish</option>
             <option value="2">Smena Yopish</option>
         </select>
 
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="pharm" name="pharm_id">
+        <select required class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="pharm" name="pharm_id">
             <option selected disabled hidden>Aptekani tanglang</option>
 {{--            @php dd(1); @endphp--}}
         @foreach($response['items'] as $item)
