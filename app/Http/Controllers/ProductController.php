@@ -100,7 +100,7 @@ class ProductController extends Controller
             'smena'=>$smena
 
         ]);
-        return redirect()->route('smena',['id'=>$id]);
+        return view('smena.smena1',compact('id'));
     }
 
 
