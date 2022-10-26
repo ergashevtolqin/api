@@ -19,4 +19,7 @@ Route::get('/', function () {
 });
 Route::get('product/{id}', [ProductController::class,'index'])->name('product');
 Route::post('product/{id}', [ProductController::class,'create'])->name('product.create');
+Route::post('smena-create/{id}', [ProductController::class,'smenaCreate'])->name('smena.create');
+Route::post('smena-store/{id}', [ProductController::class,'smenaStore'])->name('smena.store');
+Route::get('smena/{id}', [ProductController::class,'smena'])->name('smena');
 //Route::get('product/{id}', [ProductController::class,'index'])->name('product');
