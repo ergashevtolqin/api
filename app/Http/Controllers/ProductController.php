@@ -33,12 +33,17 @@ class ProductController extends Controller
         unset($inputs['_token']);
 //        dd($inputs);
         $data=[];
+        $count=0;
         foreach ($inputs as $key => $re)
         {
             if($re != 0)
             {
+                $count++;
                 $data[$key] = $re;
             }
+        }
+        if($count==0){
+            return redirect()->back();
         }
         $response = Http::post('http://128.199.2.165:8100/api/v1/product/create/', [
                 'user_id' => $user_id,
