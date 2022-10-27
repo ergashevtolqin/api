@@ -7,7 +7,7 @@
         <h1  style="text-align: center;color: #111111;">Ochish Kodi: <b>{{$response['message']}}</b></h1>
         <input style="display: none" name="pharm_id" value="{{$pharm_id}}">
         <input style="display: none" name="smena" value="{{$smena}}">
-        <p>Bugungi kun ochish soni bilan SELFIE tushing va yuboring</p>
+        <p style="color: #111111">Bugungi kun ochish soni bilan SELFIE tushing va yuboring</p>
     </div>
     <div class="mb-3">
         <label for="formFileSm" class="form-label">Rasm yuklang</label>

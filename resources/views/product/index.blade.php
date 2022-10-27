@@ -17,7 +17,7 @@
                     @endif
                 >
 {{--        <div class="cafe-item js-item" data-item-id="1" data-item-price="4990">--}}
-            <div id="counter{{$product->id}}" style="display: none;" class="cafe-item-counter js-item-counter">0</div>
+            <div id="counter{{$product->id}}" style="display: none;" class="cafe-item-counter js-item-counter">1</div>
             <div class="cafe-item-photo">
 {{--               --}}
                 <picture class="cafe-item-lottie js-item-lottie">
@@ -65,6 +65,8 @@
             $(`#add${id}`).css('display','none');
             $(`#pm${id}`).css('display','');
             $(`#counter${id}`).css('display','');
+            var counter = $(`#counter${id}`).text();
+            $(`#input${id}`).val(counter);
         }
         function minus(id)
         {
