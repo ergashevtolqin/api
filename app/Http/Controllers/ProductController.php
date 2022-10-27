@@ -69,7 +69,6 @@ class ProductController extends Controller
         $request->validate([
             'pharm_id'=>'required',
             'smena'=>'required',
-            'image'=>'required'
         ]);
         $req = $request->all();
         unset($req['_token']);
@@ -89,8 +88,6 @@ class ProductController extends Controller
     public function smenaStore($id,Request $request)
     {
         $request->validate([
-            'pharm_id'=>'required',
-            'smena'=>'required',
             'image'=>'required'
         ]);
         $req = $request->all();
