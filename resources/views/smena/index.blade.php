@@ -16,7 +16,7 @@
 
                         <li>Apteka tanlanmagan</li>
                         @endif
-                        @if(substr($error,4,1)=='p')
+                        @if(substr($error,4,1)=='s')
                                 <li>Smena tanlanmagan</li>
                         @endif
                     @endforeach
