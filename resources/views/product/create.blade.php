@@ -38,8 +38,8 @@
 <div class="row" style="display: flex;padding-right:25px;">
     <h1 style="margin-left:20px ;">Jami:</h1> <h2 style="margin-left:20px;margin-left: auto;">{{$all_sum}} so'm</h2>
 </div>
-
-<a href="#" class="footer" style="border-radius:1px;display: inline-block;
+<div class="row" >
+    <a href="#" class="footer" style="border-radius:1px;display: inline-block;
               font-family: var(--default-font);
               font-weight: 700;
               font-size: 16px;
@@ -54,6 +54,8 @@
               outline: none;
               border: none;
               padding-top: 10px;">Saqlash</a>
+</div>
+
 <!-- <button href="#" class="footer" style="border-radius:1px">Saqlash</button> -->
 <script src="https://tg.dev/js/jquery.min.js"></script>
 </body>

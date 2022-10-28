@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicine;
-use App\Models\Product;
+use App\Rules\Product;
+use App\Rules\ProductPharm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
@@ -52,13 +53,30 @@ class ProductController extends Controller
 
 //        dd($response);
         $product=json_decode($response);
-//        dd($product->items[0]->order_id);
         $all_sum=0;
         foreach ($product->items as $item){
             $all_sum+=$item->medicine->price*$item->number;
         }
-//        dd($product->items);
+//        dd($product->items[0]->order_id);
+
+
+        return redirect()->route('check',['id'=>$product->items[0]->order_id]);
+    }
+
+    public function check($id)
+    {
+//        dd($id);
+        $response=Http::get('http://128.199.2.165:8100/api/v1/order/info/'.$id.'/');
+        $all_sum=0;
+//        dd($response['items']);
+        $product=json_decode($response);;
+//        dd($product);
+        $all_sum=0;
+        foreach ($product->items as $item){
+            $all_sum+=$item->medicine->price*$item->number;
+        }
         return view('product.create',compact('product','all_sum'));
+
     }
 
     public function smena($id)
@@ -73,7 +91,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'pharm_id'=>'required',
-            'smena'=>'required',
+            'smena'=>'required'
         ]);
         $req = $request->all();
         unset($req['_token']);
@@ -114,6 +132,7 @@ class ProductController extends Controller
         ]);
         return view('smena.smena1',compact('id'));
     }
+
 
 
 

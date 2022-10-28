@@ -22,4 +22,6 @@ Route::post('product/{id}', [ProductController::class,'create'])->name('product.
 Route::post('smena-create/{id}', [ProductController::class,'smenaCreate'])->name('smena.create');
 Route::post('smena-store/{id}', [ProductController::class,'smenaStore'])->name('smena.store');
 Route::get('smena/{id}', [ProductController::class,'smena'])->name('smena');
+Route::get('check/{id}', [ProductController::class,'check'])->name('check');
+
 //Route::get('product/{id}', [ProductController::class,'index'])->name('product');

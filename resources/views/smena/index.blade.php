@@ -12,7 +12,13 @@
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        @if(substr($error,4,1)=='p')
+
+                        <li>Apteka tanlanmagan</li>
+                        @endif
+                        @if(substr($error,4,1)=='p')
+                                <li>Smena tanlanmagan</li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
