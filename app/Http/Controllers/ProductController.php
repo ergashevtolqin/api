@@ -104,6 +104,7 @@ class ProductController extends Controller
             'smena'=>$smena
         ]);
 //        return $response;
+//        dd($smena);
 //        dd($response);
         return view('smena.smena',compact('id','response','pharm_id','smena'));
     }
@@ -122,7 +123,6 @@ class ProductController extends Controller
 //        $dir='/images/project';
 //        $image=$this->uploadImage($req['image'],$dir);
 //        dd($image);
-        $image=
 
         $response=Http::attach('image',file_get_contents($request->file('image')),'image.jpg')->post('http://128.199.2.165:8100/api/v1/smena/create/',[
             'user_id'=>$id,
