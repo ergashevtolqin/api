@@ -112,7 +112,7 @@ class ProductController extends Controller
     public function smenaStore($id,Request $request)
     {
         $request->validate([
-            'image'=>'required'
+            'image'=>'mimes:jpeg,jpg,png,gif|required|max:10000'
         ]);
         $req = $request->all();
         unset($req['_token']);
