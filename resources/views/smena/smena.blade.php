@@ -11,7 +11,7 @@
     </div>
     <div class="mb-3">
         <label style="color: #111111" for="formFileSm" class="form-label">Rasm yuklang</label>
-        <input required class="form-control form-control-sm" id="formFileSm" type="file" accept="image/png, image/jpeg" /> name="image">
+        <input required class="form-control form-control-sm" id="formFileSm" type="file" accept="image/png, image/jpeg" name="image">
     </div>
     <div>
         <button type="submit" class="btn-primary">Saqlash</button>
