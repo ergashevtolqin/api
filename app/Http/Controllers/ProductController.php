@@ -13,9 +13,9 @@ class ProductController extends Controller
 {
     public function index($id)
     {
-        $response = Http::post('http://128.199.2.165:8100/api/v1/user/tracking/', [
-            'user_id' => $id,
-        ]);
+//        $response = Http::post('http://128.199.2.165:8100/api/v1/user/tracking/', [
+//            'user_id' => $id,
+//        ]);
         $response1=Http::get('http://128.199.2.165:8100/api/v1/user/info/'.$id.'/');
         $r1=json_decode($response1);
         if ($r1->status==3){
@@ -46,13 +46,14 @@ class ProductController extends Controller
         if($count==0){
             return redirect()->back();
         }
+
         $response = Http::post('http://128.199.2.165:8100/api/v1/product/create/', [
                 'user_id' => $user_id,
                 'data' => $data
             ]);
 
-//        dd($response);
         $product=json_decode($response);
+//        dd($product);
         $all_sum=0;
         foreach ($product->items as $item){
             $all_sum+=$item->medicine->price*$item->number;
@@ -60,29 +61,27 @@ class ProductController extends Controller
 //        dd($product->items[0]->order_id);
 
 
-        return redirect()->route('check',['id'=>$product->items[0]->order_id]);
+        return redirect()->route('check',['id'=>$product->items[0]->order_id,'user_id'=>$user_id]);
     }
 
-    public function check($id)
+    public function check($id,$user_id)
     {
-//        dd($id);
         $response=Http::get('http://128.199.2.165:8100/api/v1/order/info/'.$id.'/');
         $all_sum=0;
 //        dd($response['items']);
-        $product=json_decode($response);;
-//        dd($product);
+        $product=json_decode($response);
         $all_sum=0;
         foreach ($product->items as $item){
             $all_sum+=$item->medicine->price*$item->number;
         }
-        return view('product.create',compact('product','all_sum'));
+        return view('product.create',compact('product','all_sum','user_id'));
 
     }
 
     public function smena($id)
     {
         $response=Http::get('http://128.199.2.165:8100/api/v1/pharm/list/'.$id.'/');
-//        return $response['items'];
+//        dd($response['items']);
 //        dd($response['items'][1]['id']);
         return view('smena.index',compact('response','id'));
     }

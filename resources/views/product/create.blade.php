@@ -22,7 +22,7 @@
 <h1 style="margin-left: 100px;">Elektron Chek</h1>
 <hr style="width: 100%;">
 <div class="row" style="display: flex;padding-right:25px;">
-    <h3 style="margin-left:20px ;">Zakas nomeri:</h3> <h3 style="margin-left:20px;margin-left: auto;">ord123{{$product->items[0]->order_id}}</h3>
+    <h3 style="margin-left:20px ;">Zakas nomeri:</h3> <h3 style="margin-left:20px;margin-left: auto;">ord{{$product->items[0]->order_id}}</h3>
 </div>
 <div class="row" style="display: flex;padding-right:25px;">
     <h3 style="margin-left: 20px;">Zakazga Mas'ul:</h3> <h3 style="margin-left:20px;margin-left: auto;">{{$product->items[0]->user[0]->first_name}} {{$product->items[0]->user[0]->last_name}}</h3>
@@ -39,7 +39,7 @@
     <h1 style="margin-left:20px ;">Jami:</h1> <h2 style="margin-left:20px;margin-left: auto;">{{$all_sum}} so'm</h2>
 </div>
 <div class="row" >
-    <a href="#" class="footer" style="border-radius:1px;display: inline-block;
+    <a href="{{route('product',['id'=>$user_id])}}" class="footer" style="border-radius:1px;display: inline-block;
               font-family: var(--default-font);
               font-weight: 700;
               font-size: 16px;
@@ -53,7 +53,7 @@
               color: #fff;
               outline: none;
               border: none;
-              padding-top: 10px;">Saqlash</a>
+              padding-top: 10px;">Orqaga</a>
 </div>
 
 <!-- <button href="#" class="footer" style="border-radius:1px">Saqlash</button> -->
